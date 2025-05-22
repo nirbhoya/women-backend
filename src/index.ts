@@ -12,7 +12,7 @@ const app = express();
 
 // CORS middleware
 const corsOptions = {
-  origin: "https://nirbhoya.org", // Allow frontend running on port 3001
+  origin: "https://app.nirbhoya.org/", // Allow frontend running on port 3001
   methods: ["GET", "POST", "PUT", "DELETE"], // Allow GET and POST methods
   allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers (including Authorization)
   credentials: true, // Allow credentials (cookies, authorization headers)
