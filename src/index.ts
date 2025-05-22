@@ -12,18 +12,11 @@ const app = express();
 
 // CORS middleware
 const corsOptions = {
-  origin: function (origin: string | undefined, callback: (arg0: Error | null, arg1: boolean) => void) {
-    if (!origin || origin === 'https://app.nirbhoya.org' || origin === 'https://nirbhoya.org') {
-      callback(null, true);  // Allow the request
-    } else {
-      callback(new Error('Not allowed by CORS'), false);  // Reject the request
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
+  origin: "https://app.nirbhoya.org", // Allow frontend running on port 3001
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allow GET and POST methods
+  allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers (including Authorization)
+  credentials: true, // Allow credentials (cookies, authorization headers)
 };
-
 
 app.use(cors(corsOptions));
 
